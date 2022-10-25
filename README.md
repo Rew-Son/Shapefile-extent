@@ -1,2 +1,2 @@
 # Shapefile-extent
-Create shapiefile extent base on attributes
+Create shapefile extent base on attributes
