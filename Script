@@ -1,0 +1,34 @@
+import numpy as np
+import PySimpleGUI as sg
+import os.path
+from shapely.ops import unary_union
+import pandas as pd
+from sklearn.cluster import AgglomerativeClustering
+import geopandas as gpd
+
+def read_files_shp(path_shp, files_shp, window):
+    #all data from files_shp
+    unique = []
+    data = gpd.GeoDataFrame()
+    m=0
+    for i in files_shp:
+       path_shp_file = os.path.join(path_shp,i)
+       file = gpd.read_file(path_shp_file, encoding="cp1250")
+       file = file[file.geometry != None]
+       m=m+1
+       window['-PROGRESS_BAR-'].update((m*25)/(len(files_shp)))
+       if hasattr(file, 'OPT_N'): 
+           data = data.append(file, ignore_index=True) 
+           #unique value in column 
+           p_nr = file.OPT_N.unique().tolist()
+           unique.append(p_nr)
+        
+           
+    unique = [x for xs in unique for x in xs]
+    # Using List comprehension to remove none values
+    #unique = [ ele for ele in unique if ele is not None ]
+    # remove duplicat
+    unique = list( dict.fromkeys(unique) )
+    return(unique, data)
+    
+    
