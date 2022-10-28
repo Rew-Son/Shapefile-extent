@@ -7,7 +7,8 @@ Create shapefile bounds base on shapefile attributes
 
 ## First step
 Read all shapefiles in selected folder
-![image](https://user-images.githubusercontent.com/71393344/198549126-06035efc-c43d-4d4f-9e0c-1f3d8a299729.png)
+![image](https://user-images.githubusercontent.com/71393344/198587197-4557012d-14e8-45d0-8a1c-1d714567d3b1.png)
+
 
 ## Second step
 Read excel with attributes to merge
