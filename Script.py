@@ -1,9 +1,5 @@
 # -*- coding: utf-8 -*-
-"""
-Created on Fri Jun 24 11:14:44 2022
 
-@author: wnosek
-"""
 import numpy as np
 import PySimpleGUI as sg
 import os.path
